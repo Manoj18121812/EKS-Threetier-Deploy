@@ -15,7 +15,7 @@ public class ProductController {
     @Autowired
     ProductService service;
 
-    @GetMapping("/")
+    @GetMapping("/product")
     public String home(Model model) {
 
         model.addAttribute("list", service.listAll());
