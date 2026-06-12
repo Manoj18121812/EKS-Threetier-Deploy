@@ -5,9 +5,7 @@ metadata:
 spec:
   selector:
     app: product-service
-
   ports:
-  - port: 8082
+  - port: 80
     targetPort: 8082
-
-  type: NodePort
+  type: LoadBalancer

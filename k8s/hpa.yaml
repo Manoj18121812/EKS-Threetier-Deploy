@@ -1,5 +1,6 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
+
 metadata:
   name: product-service-hpa
 spec:
@@ -8,13 +9,14 @@ spec:
     kind: Deployment
     name: product-service
 
-  minReplicas: 1
+  minReplicas: 2
   maxReplicas: 5
 
   metrics:
   - type: Resource
     resource:
       name: cpu
+
       target:
         type: Utilization
         averageUtilization: 50
